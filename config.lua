@@ -1,7 +1,17 @@
 config = {
-	timeToRob = 60, -- In seconds
-	robberyCooldown = 15, -- In minutes
+	timeToRobBank = 200, --Time to rob the bank in seconds
+	timeToRobAmmunation = 30, -- Time to rob the Ammunation in seconds
+	timeToRob247 = 40, -- Time to rob the 24/7 in seconds
+	timeToRobLTD = 40, -- Time to rob the LTD in seconds
+	timeToRobLiquor = 30, -- Time to rob the Liquor Store in seconds
+
+	robberyCooldown = 60, -- Cooldown for the stores (Make sure to also change in the robberySuccess and robberyFailed messages)
+	robberyStoreCooldown = 15, -- Cooldown for the stores (Make sure to also change in the robberyStoreSuccess and robberyStoreFailed messages)
+
 	robbingStr = "Breaking into the Safe...",
+
+	storeAmount = 3000, -- Amount the stores should be robbed for
+	amount = 100000, -- Amount the banks should be robbed for
 
 	displayBlips = true, -- Makes it so when a robbery is started a blip is created and flashes.
 
@@ -11,8 +21,11 @@ config = {
 	enableBanks = true, -- Enables all Banks to be robbed.
 	enableLiquor = true, -- Enables all Liquor Stores to be robbed.
 
-	robberySuccess = "^2^*The robbery was successful. ^5^rNext robbery can be activated in ^1^*15 ^5^rminutes.",
-	robberyFailed = "^1^*The robbery has failed. ^5^rNext robbery can be activited in ^1^*15 ^5^rminutes",
+	robberySuccess = "^1^*The bank robbery was successful. ^5^rNext robbery can be activated in ^1^*60 ^5^rminutes",
+	robberyFailed = "^1^*The bank robbery has failed. ^5^rNext robbery can be activated in ^1^*60 ^5^rminutes",
+
+	robberyStoreSuccess = "^2^*The store robbery was successful. ^5^rNext robbery can be activated in ^1^*15 ^5^rminutes.",
+	robberyStoreFailed = "^1^*The store robbery has failed. ^5^rNext robbery can be activited in ^1^*15 ^5^rminutes",
 
 	bankcoords = {
 		{name = "Paleto Bank Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Blaine County Savings Bank in Paleto Bay^1! All police units are required to assist!", 
@@ -21,11 +34,14 @@ config = {
 		{name = "Harmony Bank Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Fleeca Bank Harmony in Harmony^1! All police units are required to assist!", 
 		x = 1177.32, y = 2711.79, z = 38.1 - 1},
 
-		{name = "Banham Canyon Bank Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Bank in Banham Canyon^1! All police units are required to assist!", 
+		{name = "Banham Canyon Bank Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5bank in Banham Canyon^1! All police units are required to assist!", 
 		x = -2957.5, y = 480.97, z = 15.71 - 1},
 
-		{name = "Pillbox Hill Bank Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Bank in Pillbox Hill^1! All police units are required to assist!", 
+		{name = "Pillbox Hill Bank Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5bank in Pillbox Hill^1! All police units are required to assist!", 
 		x = 146.46, y = -1044.67, z = 29.38 - 1},
+
+		{name = "Pacific Standard Public Deposit Bank Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Pacific Standard Public Deposit Bank in Vinewood! All police units are required to assist! Postal 596!", 
+		x = 263.82, y = 215.00, z = 101.68 - 1},
 	},
 
 	ammunationcoords = {
@@ -90,6 +106,9 @@ config = {
 
 		{name = "Strawberry 24/7 Robbery", alarm = "^1^*A silent alarm has been triggered at the ^524/7 in Strawberry^1! All police units are required to assist!", 
 		x = 28.71, y = -1339.51, z = 29.5 - 1},
+
+		{name = "Paleto 24/7 Robbery", alarm = "^1^*A silent alarm has been triggered at the ^524/7 in Paleto^1! All police units are required to assist!", 
+		x = 168.69, y = 6643.56, z = 31.69 - 1},
 	},
 
 	ltdcoords = {
@@ -107,6 +126,7 @@ config = {
 
 		{name = "Mirror Park LTD Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5LTD in Mirror Park^1! All police units are required to assist!", 
 		x = 1160.38, y = -313.88, z = 69.21 - 1},
+		
 	},
 
 	liquorcoords = {
